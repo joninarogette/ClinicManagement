@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbClinicManagementModelStoreContainer" CdmEntityContainer="dbClinicManagementEntities">
+    <EntitySetMapping Name="Inventories">
+      <EntityTypeMapping TypeName="dbClinicManagementModel.Inventory">
+        <MappingFragment StoreEntitySet="Inventory">
+          <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+          <ScalarProperty Name="SupplyID" ColumnName="SupplyID" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="SupplyQuantity" ColumnName="SupplyQuantity" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedCheckDetails">
+      <EntityTypeMapping TypeName="dbClinicManagementModel.MedCheckDetail">
+        <MappingFragment StoreEntitySet="MedCheckDetail">
+          <ScalarProperty Name="MedCheckHID" ColumnName="MedCheckHID" />
+          <ScalarProperty Name="DateofVisit" ColumnName="DateofVisit" />
+          <ScalarProperty Name="TimeofVisit" ColumnName="TimeofVisit" />
+          <ScalarProperty Name="Complaint" ColumnName="Complaint" />
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+          <ScalarProperty Name="Treatment" ColumnName="Treatment" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedCheckHeaders">
+      <EntityTypeMapping TypeName="dbClinicManagementModel.MedCheckHeader">
+        <MappingFragment StoreEntitySet="MedCheckHeader">
+          <ScalarProperty Name="MedCheckHID" ColumnName="MedCheckHID" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+          <ScalarProperty Name="MedCheckType" ColumnName="MedCheckType" />
+          <ScalarProperty Name="MedCheckStatus" ColumnName="MedCheckStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="dbClinicManagementModel.Patient">
+        <MappingFragment StoreEntitySet="Patient">
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="PatientLast" ColumnName="PatientLast" />
+          <ScalarProperty Name="PatientFirst" ColumnName="PatientFirst" />
+          <ScalarProperty Name="PatientMid" ColumnName="PatientMid" />
+          <ScalarProperty Name="PatientGender" ColumnName="PatientGender" />
+          <ScalarProperty Name="PatientBDate" ColumnName="PatientBDate" />
+          <ScalarProperty Name="PatientAddrss" ColumnName="PatientAddrss" />
+          <ScalarProperty Name="PatientType" ColumnName="PatientType" />
+          <ScalarProperty Name="PatientClass" ColumnName="PatientClass" />
+          <ScalarProperty Name="CollegeID" ColumnName="CollegeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PColleges">
+      <EntityTypeMapping TypeName="dbClinicManagementModel.PCollege">
+        <MappingFragment StoreEntitySet="PCollege">
+          <ScalarProperty Name="CollegeID" ColumnName="CollegeID" />
+          <ScalarProperty Name="CollegeCode" ColumnName="CollegeCode" />
+          <ScalarProperty Name="CollegeName" ColumnName="CollegeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staffs">
+      <EntityTypeMapping TypeName="dbClinicManagementModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="StaffLast" ColumnName="StaffLast" />
+          <ScalarProperty Name="StaffFirst" ColumnName="StaffFirst" />
+          <ScalarProperty Name="StaffMid" ColumnName="StaffMid" />
+          <ScalarProperty Name="StaffGender" ColumnName="StaffGender" />
+          <ScalarProperty Name="StaffPassword" ColumnName="StaffPassword" />
+          <ScalarProperty Name="StaffJoinedDate" ColumnName="StaffJoinedDate" />
+          <ScalarProperty Name="StaffType" ColumnName="StaffType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supplies">
+      <EntityTypeMapping TypeName="dbClinicManagementModel.Supply">
+        <MappingFragment StoreEntitySet="Supply">
+          <ScalarProperty Name="SupplyID" ColumnName="SupplyID" />
+          <ScalarProperty Name="SupplyName" ColumnName="SupplyName" />
+          <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
+          <ScalarProperty Name="SupplyType" ColumnName="SupplyType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
