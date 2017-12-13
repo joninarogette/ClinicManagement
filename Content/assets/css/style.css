@@ -41,9 +41,9 @@ body {
 .page-head-line {
     font-weight: 900;
     padding-bottom: 20px;
-    border-bottom: 2px solid #F0677C;
+    border-bottom: 2px solid #932109;
     text-transform: uppercase;
-    color: #F0677C;
+    color: #932109;
     font-size: 20px;
     margin-bottom: 40px;
 }
@@ -78,7 +78,7 @@ background-color:#F0677C;
    HEADER SECTION STYLES
  ============================================================ */
 header {
-    background-color: #F0677C;
+    background-color: #932109;
     color: #fff;
     padding: 10px;
     text-align: right;
@@ -181,8 +181,8 @@ header {
 }
 
 .navbar-inverse {
-    background-color: #C36464;
     border-color: transparent;
+    background-image: url("/Content/CPage/img/header.JPG");
 }
 
 .navbar-toggle {
@@ -200,7 +200,7 @@ footer {
     padding: 10px;
     color: #fff;
     font-size: 12px;
-    background-color: #C36464;
+    background-color: #932109;
 }
 
     footer a, footer a:hover {
