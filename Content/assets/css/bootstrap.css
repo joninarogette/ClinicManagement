@@ -258,6 +258,7 @@ th {
   .table td,
   .table th {
     background-color: #fff !important;
+    font-size: large !important;   
   }
   .table-bordered th,
   .table-bordered td {
