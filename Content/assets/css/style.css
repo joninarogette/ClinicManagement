@@ -183,6 +183,7 @@ header {
 .navbar-inverse {
     border-color: transparent;
     background-image: url("/Content/CPage/img/header.JPG");
+    height: 100px;
 }
 
 .navbar-toggle {

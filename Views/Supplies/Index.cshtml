@@ -4,42 +4,60 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="page-head-line">List of Supplies</h4>
+            </div>
+        </div>
+        <!--    Hover Rows  -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SupplyName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ReceivedDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SupplyType)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SupplyName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ReceivedDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SupplyType)
+                                    </td>
+                                    <td>
+                                        <a href="/Staffs/Details/@Html.DisplayFor(modelItem => item.SupplyID)" type="button" class="btn btn-md btn-success"><i class="fa fa-eye"></i></a>
+                                        <a href="/Staffs/Edit/@Html.DisplayFor(modelItem => item.SupplyID)" type="button" class="btn btn-md btn-success"><i class="fa fa-pencil-square-o"></i></a>
+                                        <a href="/Staffs/Delete/@Html.DisplayFor(modelItem => item.SupplyID)" type="button" class="btn btn-md btn-success"><i class="fa fa-times"></i></a>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.SupplyName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReceivedDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SupplyType)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SupplyName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReceivedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SupplyType)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SupplyID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SupplyID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SupplyID })
-        </td>
-    </tr>
-}
-
-</table>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- End  Hover Rows  -->
+    </div>
+</div>
