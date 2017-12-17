@@ -1,4 +1,5 @@
-﻿
+﻿@model ClinicManagement.Models.Staff
+
 @{
     Layout = null;
 }
@@ -14,18 +15,21 @@
     <link href="~/Content/login_style.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="container">
-        <div class="login-container">
-            <div id="output"></div>
-            <div class="avatar"></div>
-            <div class="form-box">
-                <form action="" method="post">
-                    <input name="user" type="text" placeholder="username">
-                    <input type="password" placeholder="password">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="container">
+            <div class="login-container">
+                <div id="output"></div>
+                <div class="avatar"></div>
+                <div class="form-box">
+                    @Html.EditorFor(model => model.StaffID, new { htmlAttributes = new { @placeholder = "id", @type = "text" } })
+                    @Html.EditorFor(model => model.StaffPassword, new { htmlAttributes = new { @placeholder = "password", @type = "password" } })
                     <button class="btn btn-info btn-block login" type="submit">Login</button>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
+    }
 </body>
 </html>
