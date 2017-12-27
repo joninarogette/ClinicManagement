@@ -15,6 +15,7 @@
     <link href="~/Content/login_style.css" rel="stylesheet" />
 </head>
 <body>
+    hehe @ViewBag.id
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -26,6 +27,10 @@
                 <div class="form-box">
                     @Html.EditorFor(model => model.StaffID, new { htmlAttributes = new { @placeholder = "id", @type = "text" } })
                     @Html.EditorFor(model => model.StaffPassword, new { htmlAttributes = new { @placeholder = "password", @type = "password" } })
+                    <hr />
+                    @Html.ValidationMessageFor(model => model.StaffID, "", new { @class = "text-danger" })
+                    <br />
+                    @Html.ValidationMessageFor(model => model.StaffPassword, "", new { @class = "text-danger" })
                     <button class="btn btn-info btn-block login" type="submit">Login</button>
                 </div>
             </div>
