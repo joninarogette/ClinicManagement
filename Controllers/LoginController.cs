@@ -27,9 +27,18 @@ namespace ClinicManagement.Controllers
                             where q.StaffID == staff.StaffID && q.StaffPassword == staff.StaffPassword
                             select q;
 
-                var result = query.FirstOrDefault();
+                if (query.Any())
+                {
+                    ViewBag.ErrorMessage = "";
 
-                ViewBag.id = result;
+                    System.Diagnostics.Debug.WriteLine("Login Success");
+
+                    return RedirectToAction("Index", "Patients");
+                }
+                else
+                {
+                    ViewBag.ErrorMessage = "Invalid Credentials";
+                }
             }
 
             return View();
