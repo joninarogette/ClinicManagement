@@ -3,6 +3,10 @@
 @{
     ViewBag.Title = "Index";
 }
+@*<head>
+        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></script>
+    </head>*@
 <div class="content-wrapper">
     <div class="container">
         <div class="row">
@@ -13,15 +17,15 @@
         <!--    Hover Rows  -->
         <div class="panel panel-default">
             <div class="panel-heading">
-                
+
             </div>
             <div class="panel-body">
                 <div class="table-responsive">
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="p_table">
                         <thead>
                             <tr>
                                 <th>First Name</th>
-                                <th>Middle Initial</th>
+                                <th>Middle Name</th>
                                 <th>Last Name</th>
                                 <th>College</th>
                                 <th></th>
@@ -51,11 +55,11 @@
                                     </td>
                                 </tr>
                             }
-                            </tbody>
+                        </tbody>
                     </table>
                 </div>
             </div>
         </div>
         <!-- End  Hover Rows  -->
-</div>
+    </div>
 </div>

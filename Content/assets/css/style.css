@@ -198,10 +198,10 @@ header {
    FOOTER SECTION STYLES
  ============================================================ */
 footer {
-    padding: 10px;
-    color: #fff;
-    font-size: 12px;
     background-color: #932109;
+    color: #fff;
+    padding: 10px;
+    text-align: right;
 }
 
     footer a, footer a:hover {

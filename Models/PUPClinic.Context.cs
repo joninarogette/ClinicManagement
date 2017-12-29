@@ -32,5 +32,7 @@ namespace ClinicManagement.Models
         public virtual DbSet<PCollege> PColleges { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
         public virtual DbSet<Supply> Supplies { get; set; }
+        public virtual DbSet<PatientType> PatientTypes { get; set; }
+        public virtual DbSet<UserType> UserTypes { get; set; }
     }
 }

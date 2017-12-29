@@ -17,7 +17,7 @@ namespace ClinicManagement.Controllers
         // GET: Patients
         public ActionResult Index()
         {
-            var patients = db.Patients.Include(p => p.PCollege);
+            var patients = db.Patients.Include(p => p.PCollege).Include(p => p.PatientType1);
             return View(patients.ToList());
         }
 
@@ -39,16 +39,17 @@ namespace ClinicManagement.Controllers
         // GET: Patients/Create
         public ActionResult Create()
         {
-            ViewBag.CollegeID = new SelectList(db.PColleges, "CollegeID", "CollegeCode");
+            ViewBag.CollegeID = new SelectList(db.PColleges, "CollegeID", "CollegeName");
+            ViewBag.TypeID = new SelectList(db.PatientTypes, "TypeID", "TypeName");
             return View();
         }
 
         // POST: Patients/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PatientID,PatientLast,PatientFirst,PatientMid,PatientGender,PatientBDate,PatientAddrss,PatientType,PatientClass,CollegeID")] Patient patient)
+        public ActionResult Create([Bind(Include = "PatientID,PatientLast,PatientFirst,PatientMid,PatientGender,PatientBDate,PatientAddrss,PatientClass,CollegeID,TypeID")] Patient patient)
         {
             if (ModelState.IsValid)
             {
@@ -58,6 +59,7 @@ namespace ClinicManagement.Controllers
             }
 
             ViewBag.CollegeID = new SelectList(db.PColleges, "CollegeID", "CollegeCode", patient.CollegeID);
+            ViewBag.TypeID = new SelectList(db.PatientTypes, "TypeID", "TypeName", patient.TypeID);
             return View(patient);
         }
 
@@ -73,16 +75,17 @@ namespace ClinicManagement.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CollegeID = new SelectList(db.PColleges, "CollegeID", "CollegeCode", patient.CollegeID);
+            ViewBag.CollegeID = new SelectList(db.PColleges, "CollegeID", "CollegeName", patient.CollegeID);
+            ViewBag.TypeID = new SelectList(db.PatientTypes, "TypeID", "TypeName", patient.TypeID);
             return View(patient);
         }
 
         // POST: Patients/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PatientID,PatientLast,PatientFirst,PatientMid,PatientGender,PatientBDate,PatientAddrss,PatientType,PatientClass,CollegeID")] Patient patient)
+        public ActionResult Edit([Bind(Include = "PatientID,PatientLast,PatientFirst,PatientMid,PatientGender,PatientBDate,PatientAddrss,PatientClass,CollegeID,TypeID")] Patient patient)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +93,8 @@ namespace ClinicManagement.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CollegeID = new SelectList(db.PColleges, "CollegeID", "CollegeCode", patient.CollegeID);
+            ViewBag.CollegeID = new SelectList(db.PColleges, "CollegeID", "CollegeName", patient.CollegeID);
+            ViewBag.TypeID = new SelectList(db.PatientTypes, "TypeID", "TypeName", patient.TypeID);
             return View(patient);
         }
 
