@@ -24,16 +24,15 @@ namespace ClinicManagement.Models
         public string PatientLast { get; set; }
         public string PatientFirst { get; set; }
         public string PatientMid { get; set; }
-        public string PatientGender { get; set; }
+        public Nullable<int> PatientGender { get; set; }
         public Nullable<System.DateTime> PatientBDate { get; set; }
         public string PatientAddrss { get; set; }
+        public Nullable<int> PatientType { get; set; }
         public Nullable<int> PatientClass { get; set; }
         public int CollegeID { get; set; }
-        public Nullable<int> TypeID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MedCheckHeader> MedCheckHeaders { get; set; }
         public virtual PCollege PCollege { get; set; }
-        public virtual PatientType PatientType1 { get; set; }
     }
 }

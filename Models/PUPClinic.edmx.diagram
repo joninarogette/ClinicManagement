@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="667c281cf5ab41708373ce0a41cef037" Name="Diagram1" ZoomLevel="63">
+      <Diagram DiagramId="667c281cf5ab41708373ce0a41cef037" Name="Diagram1">
         <EntityTypeShape EntityType="dbClinicManagementModel.Inventory" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="dbClinicManagementModel.MedCheckDetail" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="dbClinicManagementModel.MedCheckHeader" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbClinicManagementModel.Patient" Width="1.5" PointX="6.125" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbClinicManagementModel.PCollege" Width="1.5" PointX="8.625" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbClinicManagementModel.Patient" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbClinicManagementModel.PCollege" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
         <EntityTypeShape EntityType="dbClinicManagementModel.Staff" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbClinicManagementModel.Supply" Width="1.5" PointX="3.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbClinicManagementModel.Supply" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
         <AssociationConnector Association="dbClinicManagementModel.FK_Inventory_Staff" ManuallyRouted="false" />
         <AssociationConnector Association="dbClinicManagementModel.FK_Inventory_Supply" ManuallyRouted="false" />
         <AssociationConnector Association="dbClinicManagementModel.FK_MedCheckHeader_Inventory" ManuallyRouted="false" />
@@ -19,10 +19,6 @@
         <AssociationConnector Association="dbClinicManagementModel.FK_MedCheckHeader_Patient" ManuallyRouted="false" />
         <AssociationConnector Association="dbClinicManagementModel.FK_MedCheckHeader_Staff" ManuallyRouted="false" />
         <AssociationConnector Association="dbClinicManagementModel.FK_Patient_PCollege" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="dbClinicManagementModel.PatientType" Width="1.5" PointX="8.625" PointY="6.875" />
-        <AssociationConnector Association="dbClinicManagementModel.FK_Patient_PatientType" />
-        <EntityTypeShape EntityType="dbClinicManagementModel.UserType" Width="1.5" PointX="0.75" PointY="5.375" />
-        <AssociationConnector Association="dbClinicManagementModel.FK_Staff_UserType" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
