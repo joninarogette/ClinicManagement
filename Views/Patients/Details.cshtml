@@ -18,20 +18,20 @@
             </dd>
 
             @*<dt>
-                @Html.DisplayNameFor(model => model.PatientFirst)
-            </dt>
+                    @Html.DisplayNameFor(model => model.PatientFirst)
+                </dt>
 
-            <dd>
-                
-            </dd>
+                <dd>
 
-            <dt>
-                
-            </dt>
+                </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.PatientMid)
-            </dd>*@
+                <dt>
+
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PatientMid)
+                </dd>*@
 
             <dt>
                 Gender
@@ -62,7 +62,7 @@
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.PatientType)
+                @Html.DisplayFor(model => model.PatientType1.TypeName)
             </dd>
             <dt>
                 College
@@ -76,11 +76,11 @@
             <dd>
                 @Html.DisplayFor(model => model.PatientClass)
             </dd>
-            </dl>
-            <p class="pull-right">
-                <input type="button" value="Edit" class="btn btn-primary" />
-                <input type="button" value="Check Medical Record" class="btn btn-primary" />
-                <input type="button" value="Back" class="btn btn-primary" />
-            </p>
-</div>
+        </dl>
+        <p class="pull-right">
+            <input type="button" value="Edit" class="btn btn-primary" />
+            <input type="button" value="Check Medical Record" class="btn btn-primary" />
+            <input type="button" value="Back" class="btn btn-primary" />
+        </p>
+    </div>
 </div>

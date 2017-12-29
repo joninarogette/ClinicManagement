@@ -17,7 +17,8 @@ namespace ClinicManagement.Controllers
         // GET: Staffs
         public ActionResult Index()
         {
-            return View(db.Staffs.ToList());
+            var staffs = db.Staffs.Include(s => s.UserType);
+            return View(staffs.ToList());
         }
 
         // GET: Staffs/Details/5
@@ -38,15 +39,16 @@ namespace ClinicManagement.Controllers
         // GET: Staffs/Create
         public ActionResult Create()
         {
+            ViewBag.UserTypeID = new SelectList(db.UserTypes, "UserTypeID", "TypeDesc");
             return View();
         }
 
         // POST: Staffs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StaffID,StaffLast,StaffFirst,StaffMid,StaffGender,StaffPassword,StaffJoinedDate,StaffType")] Staff staff)
+        public ActionResult Create([Bind(Include = "StaffID,StaffLast,StaffFirst,StaffMid,StaffGender,StaffPassword,StaffJoinedDate,UserTypeID")] Staff staff)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +57,7 @@ namespace ClinicManagement.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.UserTypeID = new SelectList(db.UserTypes, "UserTypeID", "TypeDesc", staff.UserTypeID);
             return View(staff);
         }
 
@@ -70,15 +73,16 @@ namespace ClinicManagement.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.UserTypeID = new SelectList(db.UserTypes, "UserTypeID", "TypeDesc", staff.UserTypeID);
             return View(staff);
         }
 
         // POST: Staffs/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StaffID,StaffLast,StaffFirst,StaffMid,StaffGender,StaffPassword,StaffJoinedDate,StaffType")] Staff staff)
+        public ActionResult Edit([Bind(Include = "StaffID,StaffLast,StaffFirst,StaffMid,StaffGender,StaffPassword,StaffJoinedDate,UserTypeID")] Staff staff)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +90,7 @@ namespace ClinicManagement.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.UserTypeID = new SelectList(db.UserTypes, "UserTypeID", "TypeDesc", staff.UserTypeID);
             return View(staff);
         }
 

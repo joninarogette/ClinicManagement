@@ -25,14 +25,15 @@ namespace ClinicManagement.Models
         public string StaffLast { get; set; }
         public string StaffFirst { get; set; }
         public string StaffMid { get; set; }
-        public Nullable<int> StaffGender { get; set; }
+        public string StaffGender { get; set; }
         public string StaffPassword { get; set; }
         public string StaffJoinedDate { get; set; }
-        public Nullable<int> StaffType { get; set; }
+        public Nullable<int> UserTypeID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Inventory> Inventories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MedCheckHeader> MedCheckHeaders { get; set; }
+        public virtual UserType UserType { get; set; }
     }
 }
