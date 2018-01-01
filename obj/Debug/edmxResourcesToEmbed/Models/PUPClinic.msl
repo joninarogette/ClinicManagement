@@ -40,6 +40,7 @@
     <EntitySetMapping Name="Patients">
       <EntityTypeMapping TypeName="dbClinicManagementModel.Patient">
         <MappingFragment StoreEntitySet="Patient">
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
           <ScalarProperty Name="PatientID" ColumnName="PatientID" />
           <ScalarProperty Name="PatientLast" ColumnName="PatientLast" />
           <ScalarProperty Name="PatientFirst" ColumnName="PatientFirst" />
@@ -47,7 +48,6 @@
           <ScalarProperty Name="PatientGender" ColumnName="PatientGender" />
           <ScalarProperty Name="PatientBDate" ColumnName="PatientBDate" />
           <ScalarProperty Name="PatientAddrss" ColumnName="PatientAddrss" />
-          <ScalarProperty Name="PatientType" ColumnName="PatientType" />
           <ScalarProperty Name="PatientClass" ColumnName="PatientClass" />
           <ScalarProperty Name="CollegeID" ColumnName="CollegeID" />
         </MappingFragment>
@@ -65,6 +65,7 @@
     <EntitySetMapping Name="Staffs">
       <EntityTypeMapping TypeName="dbClinicManagementModel.Staff">
         <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
           <ScalarProperty Name="StaffID" ColumnName="StaffID" />
           <ScalarProperty Name="StaffLast" ColumnName="StaffLast" />
           <ScalarProperty Name="StaffFirst" ColumnName="StaffFirst" />
@@ -72,7 +73,6 @@
           <ScalarProperty Name="StaffGender" ColumnName="StaffGender" />
           <ScalarProperty Name="StaffPassword" ColumnName="StaffPassword" />
           <ScalarProperty Name="StaffJoinedDate" ColumnName="StaffJoinedDate" />
-          <ScalarProperty Name="StaffType" ColumnName="StaffType" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -83,6 +83,22 @@
           <ScalarProperty Name="SupplyName" ColumnName="SupplyName" />
           <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
           <ScalarProperty Name="SupplyType" ColumnName="SupplyType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatientTypes">
+      <EntityTypeMapping TypeName="dbClinicManagementModel.PatientType">
+        <MappingFragment StoreEntitySet="PatientType">
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTypes">
+      <EntityTypeMapping TypeName="dbClinicManagementModel.UserType">
+        <MappingFragment StoreEntitySet="UserType">
+          <ScalarProperty Name="TypeDesc" ColumnName="TypeDesc" />
+          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

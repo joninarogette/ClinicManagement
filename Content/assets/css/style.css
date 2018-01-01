@@ -26,11 +26,11 @@ body {
     line-height: 30px;
 }
 
-.set-radius-zero {
+/*.set-radius-zero {
     border-radius: 0px;
     -moz-border-radius: 0px;
     -webkit-border-radius: 0px;
-}
+}*/
 
 .content-wrapper {
     margin-top: 40px;
@@ -78,7 +78,8 @@ background-color:#F0677C;
    HEADER SECTION STYLES
  ============================================================ */
 header {
-    background-color: #932109;
+    /*background-color: #932109;*/
+    background-color: #800000;
     color: #fff;
     padding: 10px;
     text-align: right;
@@ -157,7 +158,8 @@ header {
 /* MENU LINKS SECTION*/
 
 .menu-section {
-    background-color: #3D3D3D;
+    /*background-color: #3D3D3D;*/
+    background-color: #800000;
 }
 
 #menu-top a {
@@ -184,6 +186,8 @@ header {
     border-color: transparent;
     background-image: url("/Content/CPage/img/header.JPG");
     height: 100px;
+    width: 2000px;
+    align-content: center;
 }
 
 .navbar-toggle {
@@ -198,7 +202,8 @@ header {
    FOOTER SECTION STYLES
  ============================================================ */
 footer {
-    background-color: #932109;
+    /*background-color: #932109;*/
+    background-color: #800000;
     color: #fff;
     padding: 10px;
     text-align: right;

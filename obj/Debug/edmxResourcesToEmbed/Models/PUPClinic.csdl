@@ -49,14 +49,15 @@
     <Property Name="PatientLast" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="PatientFirst" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="PatientMid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="PatientGender" Type="Int32" />
+    <Property Name="PatientGender" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
     <Property Name="PatientBDate" Type="DateTime" Precision="0" />
     <Property Name="PatientAddrss" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="PatientType" Type="Int32" />
     <Property Name="PatientClass" Type="Int32" />
     <Property Name="CollegeID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="MedCheckHeaders" Relationship="Self.FK_MedCheckHeader_Patient" FromRole="Patient" ToRole="MedCheckHeader" />
     <NavigationProperty Name="PCollege" Relationship="Self.FK_Patient_PCollege" FromRole="Patient" ToRole="PCollege" />
+    <Property Name="TypeID" Type="Int32" />
+    <NavigationProperty Name="PatientType1" Relationship="dbClinicManagementModel.FK_Patient_PatientType" FromRole="Patient" ToRole="PatientType" />
   </EntityType>
   <EntityType Name="PCollege">
     <Key>
@@ -75,21 +76,22 @@
     <Property Name="StaffLast" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="StaffFirst" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="StaffMid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="StaffGender" Type="Int32" />
+    <Property Name="StaffGender" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
     <Property Name="StaffPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="StaffJoinedDate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="StaffType" Type="Int32" />
     <NavigationProperty Name="Inventories" Relationship="Self.FK_Inventory_Staff" FromRole="Staff" ToRole="Inventory" />
     <NavigationProperty Name="MedCheckHeaders" Relationship="Self.FK_MedCheckHeader_Staff" FromRole="Staff" ToRole="MedCheckHeader" />
+    <Property Name="UserTypeID" Type="Int32" />
+    <NavigationProperty Name="UserType" Relationship="dbClinicManagementModel.FK_Staff_UserType" FromRole="Staff" ToRole="UserType" />
   </EntityType>
   <EntityType Name="Supply">
     <Key>
       <PropertyRef Name="SupplyID" />
     </Key>
-    <Property Name="SupplyID" Type="Int32" Nullable="false" />
+    <Property Name="SupplyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="SupplyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="ReceivedDate" Type="DateTime" Precision="0" />
-    <Property Name="SupplyType" Type="Int32" Nullable="false" />
+    <Property Name="SupplyType" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="Inventories" Relationship="Self.FK_Inventory_Supply" FromRole="Supply" ToRole="Inventory" />
   </EntityType>
   <Association Name="FK_Inventory_Staff">
@@ -212,5 +214,55 @@
       <End Role="PCollege" EntitySet="PColleges" />
       <End Role="Patient" EntitySet="Patients" />
     </AssociationSet>
+    <EntitySet Name="PatientTypes" EntityType="dbClinicManagementModel.PatientType" />
+    <AssociationSet Name="FK_Patient_PatientType" Association="dbClinicManagementModel.FK_Patient_PatientType">
+      <End Role="PatientType" EntitySet="PatientTypes" />
+      <End Role="Patient" EntitySet="Patients" />
+    </AssociationSet>
+    <EntitySet Name="UserTypes" EntityType="dbClinicManagementModel.UserType" />
+    <AssociationSet Name="FK_Staff_UserType" Association="dbClinicManagementModel.FK_Staff_UserType">
+      <End Role="UserType" EntitySet="UserTypes" />
+      <End Role="Staff" EntitySet="Staffs" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="PatientType">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Patients" Relationship="dbClinicManagementModel.FK_Patient_PatientType" FromRole="PatientType" ToRole="Patient" />
+  </EntityType>
+  <Association Name="FK_Patient_PatientType">
+    <End Type="dbClinicManagementModel.PatientType" Role="PatientType" Multiplicity="0..1" />
+    <End Type="dbClinicManagementModel.Patient" Role="Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PatientType">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="UserTypeID" />
+    </Key>
+    <Property Name="UserTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Staffs" Relationship="dbClinicManagementModel.FK_Staff_UserType" FromRole="UserType" ToRole="Staff" />
+  </EntityType>
+  <Association Name="FK_Staff_UserType">
+    <End Type="dbClinicManagementModel.UserType" Role="UserType" Multiplicity="0..1" />
+    <End Type="dbClinicManagementModel.Staff" Role="Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="UserTypeID" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="UserTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

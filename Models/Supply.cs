@@ -23,7 +23,7 @@ namespace ClinicManagement.Models
         public int SupplyID { get; set; }
         public string SupplyName { get; set; }
         public Nullable<System.DateTime> ReceivedDate { get; set; }
-        public int SupplyType { get; set; }
+        public string SupplyType { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Inventory> Inventories { get; set; }

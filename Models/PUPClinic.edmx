@@ -85,10 +85,10 @@
           <Key>
             <PropertyRef Name="SupplyID" />
           </Key>
-          <Property Name="SupplyID" Type="int" Nullable="false" />
           <Property Name="SupplyName" Type="varchar(max)" />
           <Property Name="ReceivedDate" Type="date" />
-          <Property Name="SupplyType" Type="int" Nullable="false" />
+          <Property Name="SupplyType" Type="varchar" MaxLength="20" />
+          <Property Name="SupplyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="UserType">
           <Key>
@@ -344,10 +344,10 @@
           <Key>
             <PropertyRef Name="SupplyID" />
           </Key>
-          <Property Name="SupplyID" Type="Int32" Nullable="false" />
+          <Property Name="SupplyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SupplyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="ReceivedDate" Type="DateTime" Precision="0" />
-          <Property Name="SupplyType" Type="Int32" Nullable="false" />
+          <Property Name="SupplyType" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Inventories" Relationship="Self.FK_Inventory_Supply" FromRole="Supply" ToRole="Inventory" />
         </EntityType>
         <Association Name="FK_Inventory_Staff">

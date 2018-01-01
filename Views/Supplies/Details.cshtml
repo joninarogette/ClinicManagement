@@ -4,40 +4,39 @@
     ViewBag.Title = "Details";
 }
 
-<div class="content-wrapper">
-    <div class="container">
-        <h4>Supply</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.SupplyName)
-            </dt>
+<h2>Details</h2>
 
-            <dd>
-                @Html.DisplayFor(model => model.SupplyName)
-            </dd>
+<div>
+    <h4>Supply</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplyName)
+        </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.ReceivedDate)
-            </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SupplyName)
+        </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.ReceivedDate)
-            </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceivedDate)
+        </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.SupplyType)
-            </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ReceivedDate)
+        </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.SupplyType)
-            </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplyType)
+        </dt>
 
-        </dl>
-        <p>
-        <p class="pull-right">
-            <input type="button" value="Edit" class="btn btn-primary" />
-            <input type="button" value="Back" class="btn btn-primary" />
-        </p>
-    </div>
+        <dd>
+            @Html.DisplayFor(model => model.SupplyType)
+        </dd>
+
+    </dl>
 </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SupplyID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
