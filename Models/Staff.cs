@@ -11,6 +11,7 @@ namespace ClinicManagement.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Staff
     {
@@ -21,11 +22,17 @@ namespace ClinicManagement.Models
             this.MedCheckHeaders = new HashSet<MedCheckHeader>();
         }
     
+        [Required(ErrorMessage = "ID field is required")]
         public string StaffID { get; set; }
         public string StaffLast { get; set; }
         public string StaffFirst { get; set; }
         public string StaffMid { get; set; }
+<<<<<<< HEAD
         public string StaffGender { get; set; }
+=======
+        public Nullable<int> StaffGender { get; set; }
+        [Required(ErrorMessage = "Password field is required")]
+>>>>>>> b63339eb4a59c1d0ad897f75ffeb2842a3b0b7cf
         public string StaffPassword { get; set; }
         public string StaffJoinedDate { get; set; }
         public Nullable<int> UserTypeID { get; set; }

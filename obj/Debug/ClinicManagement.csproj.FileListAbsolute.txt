@@ -33,6 +33,7 @@ C:\Users\ninuhh\Documents\Visual Studio 2015\Projects\ClinicManagement\ClinicMan
 C:\Users\ninuhh\Documents\Visual Studio 2015\Projects\ClinicManagement\ClinicManagement\obj\Debug\ClinicManagement.csprojResolveAssemblyReference.cache
 C:\Users\ninuhh\Documents\Visual Studio 2015\Projects\ClinicManagement\ClinicManagement\obj\Debug\ClinicManagement.dll
 C:\Users\ninuhh\Documents\Visual Studio 2015\Projects\ClinicManagement\ClinicManagement\obj\Debug\ClinicManagement.pdb
+<<<<<<< HEAD
 C:\Users\ninuhh\Documents\Visual Studio 2015\Projects\ClinicManagement\ClinicManagement\obj\Debug\ClinicManagement.csproj.CoreCompileInputs.cache
 C:\Users\ninuhh\Documents\Visual Studio 2015\Projects\ClinicManagement\ClinicManagement\bin\EntityFramework.dll
 C:\Users\ninuhh\Documents\Visual Studio 2015\Projects\ClinicManagement\ClinicManagement\bin\EntityFramework.SqlServer.dll
@@ -42,3 +43,42 @@ C:\Users\ninuhh\Documents\Visual Studio 2015\Projects\ClinicManagement\ClinicMan
 C:\Users\ninuhh\Documents\Visual Studio 2015\Projects\ClinicManagement\ClinicManagement\bin\Newtonsoft.Json.xml
 C:\Users\ninuhh\Documents\Visual Studio 2015\Projects\ClinicManagement\ClinicManagement\bin\System.Net.Http.Formatting.xml
 C:\Users\ninuhh\Documents\Visual Studio 2015\Projects\ClinicManagement\ClinicManagement\bin\System.Web.Http.xml
+=======
+C:\Git\proj mana\ClinicManagement\bin\roslyn\csc.exe
+C:\Git\proj mana\ClinicManagement\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Git\proj mana\ClinicManagement\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Git\proj mana\ClinicManagement\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Git\proj mana\ClinicManagement\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Git\proj mana\ClinicManagement\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Git\proj mana\ClinicManagement\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Git\proj mana\ClinicManagement\bin\roslyn\System.Collections.Immutable.dll
+C:\Git\proj mana\ClinicManagement\bin\roslyn\System.Reflection.Metadata.dll
+C:\Git\proj mana\ClinicManagement\bin\roslyn\vbc.exe
+C:\Git\proj mana\ClinicManagement\bin\roslyn\VBCSCompiler.exe
+C:\Git\proj mana\ClinicManagement\bin\roslyn\VBCSCompiler.exe.config
+C:\Git\proj mana\ClinicManagement\bin\ClinicManagement.dll.config
+C:\Git\proj mana\ClinicManagement\bin\ClinicManagement.dll
+C:\Git\proj mana\ClinicManagement\bin\ClinicManagement.pdb
+C:\Git\proj mana\ClinicManagement\bin\EntityFramework.dll
+C:\Git\proj mana\ClinicManagement\bin\EntityFramework.SqlServer.dll
+C:\Git\proj mana\ClinicManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Git\proj mana\ClinicManagement\bin\Microsoft.Web.Infrastructure.dll
+C:\Git\proj mana\ClinicManagement\bin\System.Web.Helpers.dll
+C:\Git\proj mana\ClinicManagement\bin\System.Web.Mvc.dll
+C:\Git\proj mana\ClinicManagement\bin\System.Web.Razor.dll
+C:\Git\proj mana\ClinicManagement\bin\System.Web.Webpages.Deployment.dll
+C:\Git\proj mana\ClinicManagement\bin\System.Web.Webpages.dll
+C:\Git\proj mana\ClinicManagement\bin\System.Web.Webpages.Razor.dll
+C:\Git\proj mana\ClinicManagement\bin\EntityFramework.xml
+C:\Git\proj mana\ClinicManagement\bin\EntityFramework.SqlServer.xml
+C:\Git\proj mana\ClinicManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Git\proj mana\ClinicManagement\bin\System.Web.Razor.xml
+C:\Git\proj mana\ClinicManagement\bin\System.Web.Webpages.xml
+C:\Git\proj mana\ClinicManagement\bin\System.Web.Webpages.Deployment.xml
+C:\Git\proj mana\ClinicManagement\bin\System.Web.Webpages.Razor.xml
+C:\Git\proj mana\ClinicManagement\bin\System.Web.Helpers.xml
+C:\Git\proj mana\ClinicManagement\bin\System.Web.Mvc.xml
+C:\Git\proj mana\ClinicManagement\obj\Debug\ClinicManagement.csprojResolveAssemblyReference.cache
+C:\Git\proj mana\ClinicManagement\obj\Debug\ClinicManagement.dll
+C:\Git\proj mana\ClinicManagement\obj\Debug\ClinicManagement.pdb
+>>>>>>> b63339eb4a59c1d0ad897f75ffeb2842a3b0b7cf
